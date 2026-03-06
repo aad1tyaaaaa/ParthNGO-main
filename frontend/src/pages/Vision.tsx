@@ -57,26 +57,6 @@ const Vision = () => {
         return () => ctx.revert();
     }, []);
 
-    const pillars = [
-        {
-            icon: Eye,
-            title: "Clarity of Purpose",
-            desc: "Focusing on root causes rather than symptoms to create systemic, lasting change in underserved areas.",
-            color: "bg-red-50 text-[#8B1D1D]"
-        },
-        {
-            icon: Compass,
-            title: "Ethical Integrity",
-            desc: "Transparency is our foundation. We operate with unwavering honesty in every project and partnership.",
-            color: "bg-blue-50 text-blue-700"
-        },
-        {
-            icon: UsersThree,
-            title: "Empowerment",
-            desc: "We don't just provide aid; we build capacity, allowing communities to lead their own development journey.",
-            color: "bg-orange-50 text-orange-700"
-        }
-    ];
 
     const milestones = [
         { year: "2026", title: "Founding Vision", desc: "Parth Foundation established with a mission to bridge systemic gaps." },
