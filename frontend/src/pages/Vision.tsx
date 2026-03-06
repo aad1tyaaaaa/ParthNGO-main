@@ -27,30 +27,30 @@ const Vision = () => {
                 ease: "power4.out"
             });
 
-            // Stagger for cards
-            gsap.from('.value-card', {
+            // Stagger for Trajectory headings
+            gsap.from('.stagger-item > *', {
                 scrollTrigger: {
-                    trigger: '.values-grid',
-                    start: "top 80%",
+                    trigger: '.trajectory-grid',
+                    start: "top 90%",
                 },
-                y: 50,
+                y: 30,
                 opacity: 0,
                 duration: 1,
                 stagger: 0.2,
                 ease: "power3.out"
             });
 
-            // Timeline items
-            gsap.from('.timeline-item', {
+            // Milestone cards stagger
+            gsap.from('.milestone-card', {
                 scrollTrigger: {
-                    trigger: '.timeline-container',
-                    start: "top 75%",
+                    trigger: '.trajectory-grid',
+                    start: "top 80%",
                 },
-                x: -30,
+                y: 60,
                 opacity: 0,
-                duration: 1,
-                stagger: 0.3,
-                ease: "power2.out"
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "expo.out"
             });
         }, mainRef);
 

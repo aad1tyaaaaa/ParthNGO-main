@@ -23,15 +23,21 @@ I have successfully connected the platform to your Supabase backend and implemen
 - **Vision Page Overhaul**: Boosted the visibility of background noise, descriptions, and timeline elements in `Vision.tsx` using higher opacities and font weights.
 - **Persistent Opacity**: Maintained high-visibility opacities across all bento-grid pages.
 
-### 5. Vercel Deployment Readiness 🚀
-- **SPA Routing**: Created a `vercel.json` file to ensure all client-side routes redirect correctly to `index.html`.
+### 5. Vercel Deployment & Routing 🚀
+- **NOT_FOUND Fix**: Resolved the Vercel routing error by implementing a catch-all rewrite in `vercel.json`. This ensures that page refreshes on routes like `/vision` are handled correctly by the React app.
+- **GSAP Sync**: Synchronized the GSAP scroll triggers in `Vision.tsx` to match the new Bento-style trajectory layout, ensuring smooth entrance animations for your milestones.
 - **Production Built**: Verified a clean production build (`npm run build`) for seamless deployment.
+
+## Understanding the Vercel NOT_FOUND Error
+- **Root Cause**: Your app uses **Client-Side Routing** (React Router). Vercel, by default, expects **Server-Side Routing**. When you refresh `/vision`, Vercel looks for a file called `vision` on the server and fails because that route only exists in your code.
+- **The Solution**: The `vercel.json` rewrite tells Vercel: "If you don't find a file, just send the user to `index.html` and let the app handle it."
+- **Pro-Tip**: Always include a catch-all rewrite for Single Page Applications (SPAs) to avoid 404s on refresh!
 
 ## Verification Results
 - **Production Build**: Successful (`npm run build`).
 - **Auth Session**: Confirmed persistence and dynamic UI updates.
 - **Connectivity**: Verified client communication with Supabase API.
-- **Routing**: Confirmed all internal and external links function as expected.
+- **Routing**: Confirmed all internal and external links function as expected on refresh.
 - **DonationPage.tsx**:
     - **Currency Update**: Changed all currency values to **INR (₹)**.
     - **Tier Standardisation**: Updated preset amounts to ₹1,000, ₹2,500, ₹5,000, and ₹10,000 with localized impact labels.
